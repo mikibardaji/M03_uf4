@@ -27,7 +27,7 @@ public class ArrayListApp {
         String nombre = teclado.nextLine();
         System.out.println("Pon la especie animal");
         String especie = teclado.nextLine();
-        uno = new Animales();
+        uno = new Animales();//direccio memoria nova
         uno.setEspecie(especie);
         uno.setNombre(nombre);
         
@@ -43,20 +43,26 @@ public class ArrayListApp {
         
         
         Animales encontrar = new Animales();
+        
         System.out.println("Pon la especie animal a encontrar");
         String especie_encontrar = teclado.nextLine();
         encontrar.setEspecie(especie_encontrar);
-        if (arca_noe_singles.contains(encontrar))
+        if (arca_noe_singles.contains(encontrar)) //equals debe estar implementado
         {
             System.out.println("si esta esta especie");
+            int posicion = arca_noe_singles.indexOf(encontrar); //equals debe estar implementado
+            System.out.println("La posicion donde esta es " + posicion);
+            System.out.println(arca_noe_singles.get(posicion).getNombre()); //[i] --> get(i)
+            System.out.println("numero animales antes de borrar" + arca_noe_singles.size());
+            arca_noe_singles.remove(encontrar);//equals debe estar implementado
+            System.out.println("numero animales despues de borrar" + arca_noe_singles.size());
         }
         else
         {
             System.out.println("no esta esta especie");
         }
         
-        int posicion = arca_noe_singles.indexOf(encontrar);
-        System.out.println("La posicion donde esta es " + posicion);
+        
     
     }
     

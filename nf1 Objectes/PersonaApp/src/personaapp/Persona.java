@@ -12,7 +12,7 @@ package personaapp;
 public class Persona {
     private String nombre;
     private int edad;
-    private double DNI;
+    private long DNI;
     private char sexo;
     private double peso;
     private double altura;
@@ -107,7 +107,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Datos de la persona -> {" + "nombre=" + nombre + "\n, edad=" + edad + ", \n DNI=" + DNI + ", \n sexo=" + sexo + ", \n peso=" + peso + ", altura=" + altura + '}';
+        return "\n  {" + "nombre=" + nombre + ", edad=" + edad + ", DNI=" + DNI + ",  sexo=" + sexo + ",  peso=" + peso + ", altura=" + altura + '}';
     }
 
 
@@ -127,6 +127,11 @@ public class Persona {
         if (this.DNI != other.DNI) {
             return false;
         }
+        //if (this.dni = other.dni)
+        //return true
+        //else if (this.nombre.equals(nombre))
+        //return true
+        //else return false;
         return true;
     }
 
@@ -159,9 +164,12 @@ public class Persona {
             return 'H';
     }
     
-    private double generarDNI()
+    private long generarDNI()
     {
-        return Math.random()*99999999+1;
+        long edat = (long) (Math.random() * (10000000 - 99999999) + 10000000);
+        if(edat<0)
+            edat = edat*(-1);
+        return edat;
     }
     
     public int calcula_IMC()
@@ -174,4 +182,10 @@ public class Persona {
         else
            return 1;
     }
+
+    public long getDNI() {
+        return DNI;
+    }
+    
+    
 }

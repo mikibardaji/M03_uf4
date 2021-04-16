@@ -7,4 +7,4 @@
 * [CompteBancariApp](https://campus.proven.cat/mod/page/view.php?id=125234)
 * ArrayListApp, programa realitzat a classe per practicar el objecte ArrayList
 * [PersonaApp](https://campus.proven.cat/pluginfile.php/161736/mod_resource/content/5/M16UF1NF1Pt1.pdf)
-* [GestorCançons Spot](https://campus.proven.cat/mod/url/view.php?id=165007)
+* [GestorCançons Spot StoreApp2](https://campus.proven.cat/mod/url/view.php?id=165007)

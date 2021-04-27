@@ -6,18 +6,23 @@
 package mundialfutbol;
 
 /**
- *
+ *clase abstracta no podre crear objetos
+ * de esta clase
+ * aqui si puedo definir atributos y metodos
+ * 
  * @author 43720186S
  */
-public class EquipFutbol {
+public abstract class EquipFutbol {
     protected int id; //protected es similar al private, pero permite que las clases hijas puedan acceder a ella directamente , sin el setter
     protected String nombre;
     protected int edad;
+    protected int salary;
 
     public EquipFutbol(int id, String nombre, int Edad) {
         this.id = id;
         this.nombre = nombre;
         this.edad = Edad;
+        salary = 1500;
     }
     
     
@@ -57,7 +62,38 @@ public class EquipFutbol {
     }
 
     public void setEdad(int Edad) {
-        this.edad = Edad;
+        if(Edad > 0)
+        {
+            this.edad = Edad;
+        }
+        else
+        {
+            this.edad = 0;
+        }
+    }
+
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final EquipFutbol other = (EquipFutbol) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
+    }
+
+    public int getSalary() {
+        return salary;
     }
     
     

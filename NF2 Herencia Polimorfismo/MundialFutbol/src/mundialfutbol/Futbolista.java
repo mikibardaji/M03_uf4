@@ -9,7 +9,7 @@ package mundialfutbol;
  *
  * @author 43720186S
  */
-public class Futbolista extends EquipFutbol{
+public class Futbolista extends GenteJuega{
     private int num_goles;
 
     //constructor
@@ -35,10 +35,19 @@ public class Futbolista extends EquipFutbol{
     
     public void jugarPartido()
     {
-        System.out.println("Estoy jugando el partido dentro del campo");
+        System.out.println(nombre + " juego el partido");
+        salary += 1000; //salary = salary + 1000
     }
     
-    
-    
-    
+    public void jugarPartido(int gol_marcado)
+    {
+        System.out.println(nombre + " juego el partido, he marcado " + gol_marcado + " goles");
+        salary += 1000; //salary = salary + 1000
+        num_goles += gol_marcado;
+    }    
+
+    @Override
+    public void entrenar() {
+        System.out.println(nombre + "entreno corriendo");
+    }
 }

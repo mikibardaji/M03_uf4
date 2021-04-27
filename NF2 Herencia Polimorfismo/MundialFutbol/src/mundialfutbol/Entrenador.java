@@ -9,11 +9,18 @@ package mundialfutbol;
  *
  * @author 43720186S
  */
-public class Entrenador extends EquipFutbol{
+public class Entrenador extends GenteJuega{
     private boolean tiene_titulo;
 
     public Entrenador(int id, String nombre, int Edad) {
         super(id, nombre, Edad);
+        tiene_titulo=true;
+    }
+
+    /* polimorfismo*/
+    public Entrenador(boolean tiene_titulo, int id, String nombre, int Edad) {
+        super(id, nombre, Edad);
+        this.tiene_titulo = tiene_titulo;
     }
 
     
@@ -31,13 +38,19 @@ public class Entrenador extends EquipFutbol{
     public void Viajar() {
         super.Viajar(); //To change body of generated methods, choose Tools | Templates.
         System.out.println("Viajo en segunda clase");
-        System.out.println(this.edad);
-        this.edad = 25;
+       // System.out.println(this.edad);
+        //this.edad = 25;//al ser protected puedo acceder
     }
     
     public void dirigirPartido()
     {
         System.out.println("Estoy diriengo al equipo en el partido ");
     }
+
+    @Override
+    public void entrenar() {
+        System.out.println("Dirijo el entreno");
+    }
     
+   
 }
